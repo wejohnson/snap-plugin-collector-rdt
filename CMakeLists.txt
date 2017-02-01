@@ -22,6 +22,8 @@ else()
     message(STATUS "Error: ${CMAKE_CXX_COMPILER} has no C++11 support")
 endif()
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fpermissive")
+
 include_directories(
         ${CMAKE_SOURCE_DIR}/include
 )
@@ -29,7 +31,7 @@ include_directories(
 set(SOURCE_FILES
         src/main.cpp
         src/rdt/rdt.cpp
-        )
+        src/rdt/rdt_utils.cpp src/rdt/rdt_utils.hpp)
 
 add_executable(snap-plugin-collector-rdt ${SOURCE_FILES})
 
