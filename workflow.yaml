@@ -1,0 +1,14 @@
+---
+  version: 1
+  schedule:
+    type: "simple"
+    interval: "1s"
+  workflow:
+    collect:
+      metrics:
+        "/intel/rdt/*": {}
+      publish:
+        -
+          plugin_name: "file"
+          config:
+            "file": "/tmp/snap_published_file.json"
