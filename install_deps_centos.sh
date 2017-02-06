@@ -60,3 +60,15 @@ popd
 
 sudo cp /usr/local/lib/* /usr/lib
 sudo ldconfig -v
+
+
+#######
+
+sudo yum install -y go
+cd ~
+mkdir go
+export GOPATH=`pwd`/go
+go get -v github.com/intelsdi-x/snap-plugin-publisher-file
+
+wget https://github.com/intelsdi-x/snap/releases/download/1.0.0/snap-1.0.0-linux-amd64.tar.gz
+tar xzf snap-1.0.0-linux-amd64.tar.gz
